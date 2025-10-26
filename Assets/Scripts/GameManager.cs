@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public string portalColor; // e.g. "Blue", "Gold", "Purple"
     public int points = 10;
+
+
+    [Header("UI Elements")]
+    public GameObject menuPanel;
+    public GameObject winPanel;
+ 
     public AudioClip successSound;
     public AudioClip failSound;
     public AudioClip background;
