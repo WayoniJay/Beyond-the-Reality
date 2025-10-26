@@ -7,16 +7,20 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 60f;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
+    private bool isEnd;
     //public GameObject winPanel;
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        timerText.text = "Time: " + Mathf.CeilToInt(timeLeft);
-
-        if (timeLeft <= 0)
+        if (!isEnd)
         {
-            EndGame();
+            timeLeft -= Time.deltaTime;
+            timerText.text = "Time: " + Mathf.CeilToInt(timeLeft);
+
+            if (timeLeft <= 0)
+            {
+                EndGame();
+            }
         }
     }
 
@@ -28,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
+        isEnd = true;
         //winPanel.SetActive(true);
     }
 }
